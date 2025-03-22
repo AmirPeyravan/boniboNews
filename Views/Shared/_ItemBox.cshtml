@@ -1,0 +1,15 @@
+﻿@model Items
+
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+    <div style="border-radius: 8px;" class="brand_box shadow-lg">
+        <img style="border-radius:8px" src="/images/@(Model.Id).jpg" alt="مشکل در بارگیری تصویر" />
+        <a asp-action="Details" asp-controller="Home" asp-route-id="@Model.Id">
+            <h3 style="cursor:pointer"><strong class="red">@Model.ItemName</strong></h3>
+        </a>
+        <span>@Model.CreateDate</span>
+        <i><img src="/images/star.png" /></i>
+        <i><img src="/images/star.png" /></i>
+        <i><img src="/images/star.png" /></i>
+        <i><img src="/images/star.png" /></i>
+    </div>
+</div>

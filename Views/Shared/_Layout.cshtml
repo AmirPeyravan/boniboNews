@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head style="font-family:Vazir">
+    <!-- basic -->
+
+    <link rel="icon" href="/images/LogoBar.jpg"
+          type="image/x-icon">
+
+    <title>هواداری بونیبو</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>pomato</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+          media="screen">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
+
+<body style="font-family:Vazir" class="main-layout ">
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img id="logo" href="#" src="/images/BoniboLoading.gif" alt="مشکل در بارگیری" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div style="font-family:Vazir" class="header">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                        <div class="full">
+                            <div class="center-desk">
+                                <div class="logo">
+                                    <a href="/Home/Index"><img src="/images/Bonibo.jpg" alt="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                        <div class="menu-area">
+                            <div class="limit-box">
+                                <nav class="main-menu">
+                                    <ul class="menu-area-main">
+                                        <li class="active"> <a href="/Home/Index">خانه</a> </li>
+                                        @{
+                                            if (User.Identity.IsAuthenticated)
+                                            {
+                                                <li><a style="color:black">@User.Identity.Name : کاربر</a></li>
+                                                <li><a asp-controller="Account" asp-action="Logout">خروج از حساب</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="/Account/Register">ثبت نام</a></li>
+                                                <li><a href="/Account/Login">ورود</a></li>
+                                            }
+                                        }
+                                        <li class="last">
+                                            <a href="#"><img src="/images/search_icon.png" alt="icon" /></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 offset-md-6">
+                        <div class="location_icon_bottum">
+                            <ul>
+                                <li><img src="/icon/call.png" />0933 705 5457</li>
+                                <li><img src="/icon/email.png" />bonibo@gmail.com</li>
+                                <li><img src="/icon/loc.png" />آدرس</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end header inner -->
+    </header>
+    <!-- end header -->
+    <section style="font-family:Vazir" class="slider_section">
+        <div style="font-family:Vazir" id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" src="/images/MyBanner.png" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <span>وب سایت برسی بونیبو</span>
+                            <h1>با ما بونیبو رو بهتر بشناسید</h1>
+                            <p>
+                                دراین صفحه با بونیبو همراه خواهید شد ، کار های روز مره ، کد نویسی ،
+                                آموزش ، خود سعید بونیبو رو برسی خواهیم کرد
+                            </p>
+                            <br>
+                            <a class="buynow" href="/account/login">ورود | ثبت نام</a>
+                            <ul class="social_icon">
+                                <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <i class='fa fa-angle-left'></i>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class='fa fa-angle-right'></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img style="border-radius:8px" src="/images/AboutBonibo.jpg" alt="img" /></figure>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_box">
+                        <h3>درباره</h3>
+                        <span>سایت رسمی بونیبو این نیست</span>
+                        <p>
+                            سایت رسمی بونیبو این نیست بلکه این سایت برای تحلیل خود بونیبو که اقای قاسمی میباشد
+                            پیاده سازی شده است ، تا شما ک البته کاربران ویژه هستید بتوانید در جریان اتفاقات باشید
+                            برای رفتن به سایت اصلی <a style="color:blue" href="https://www.bonibo.ir">اینجا</a> کلیک کنید
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+    <!-- brand -->
+    <div class="brand">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <center>
+                            <h2>آیتم ها</h2>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="font-family:Vazir" class="brand-bg">
+            <div class="container">
+                <div class="row">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end brand -->
+    <!-- clients -->
+    <div class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <center>
+                            <h2>نوشته ها</h2>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clients_red">
+        <div class="container">
+            <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#testimonial_slider" data-slide-to="0" class=""></li>
+                    <li data-target="#testimonial_slider" data-slide-to="1" class="active"></li>
+                    <li data-target="#testimonial_slider" data-slide-to="2" class=""></li>
+                </ul>
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <div class="testomonial_section">
+                            <div class="full center">
+                            </div>
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div class="cross_inner">
+                                    <h3>محل قرار گیری مقالات<br><strong class="ornage_color">نویسنده : </strong></h3>
+                                    <p>
+                                        وم یا طرح‌نما (به انگلیسی: Lorem ipsum) متنی ساختگی و بدون معنی است که برای امتحان فونت و یا پر کردن فضا در یک طراحی گرافیکی و یا صنعت چاپ استفاده می شود. طراحان وب و گرافیک از این متن برای پرکردن صفحه و ارائه شکل کلی طرح استفاده می ‌کنند.</i>
+                                    </p>
+                                    <div class="full text_align_center margin_top_30">
+                                        <img src="/icon/testimonial_qoute.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item active">
+
+                        <div class="testomonial_section">
+                            <div class="full center">
+                            </div>
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div class="cross_inner">
+                                    <h3>محل قرار گیری مقالات<br><strong class="ornage_color">نویسنده : </strong></h3>
+                                    <p>
+                                        وم یا طرح‌نما (به انگلیسی: Lorem ipsum) متنی ساختگی و بدون معنی است که برای امتحان فونت و یا پر کردن فضا در یک طراحی گرافیکی و یا صنعت چاپ استفاده می شود. طراحان وب و گرافیک از این متن برای پرکردن صفحه و ارائه شکل کلی طرح استفاده می ‌کنند.</i>
+                                    </p>
+                                    <div class="full text_align_center margin_top_30">
+                                        <img src="/icon/testimonial_qoute.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item">
+
+                        <div class="testomonial_section">
+                            <div class="full center">
+                            </div>
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div style="font-family:Vazir" class="cross_inner">
+                                    <h3 style="font-family:Vazir">محل قرار گیری مقالات<br><strong style="font-family:Vazir" class="ornage_color">نویسنده : </strong></h3>
+                                    <p>
+                                        وم یا طرح‌نما (به انگلیسی: Lorem ipsum) متنی ساختگی و بدون معنی است که برای امتحان فونت و یا پر کردن فضا در یک طراحی گرافیکی و یا صنعت چاپ استفاده می شود. طراحان وب و گرافیک از این متن برای پرکردن صفحه و ارائه شکل کلی طرح استفاده می ‌کنند.</i>
+                                    </p>
+                                    <div class="full text_align_center margin_top_30">
+                                        <img src="/icon/testimonial_qoute.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- end clients -->
+    <!-- contact -->
+    <div style="font-family:Vazir" class="contact">
+        <div class="container">
+            <div class="row">
+                <div style="border-radius:8px;" class="col-md-12">
+                    <form style="border-radius:8px;font-family:Vazir" class="main_form">
+                        <div class="row">
+                            <div style="border-radius:8px;" class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input style="font-family:Vazir" class="form-control shadow-lg" placeholder="نام" type="text" name="Your Name">
+                            </div>
+                            <div style="border-radius:8px;" class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input style="font-family:Vazir" class="form-control shadow-lg" placeholder="ایمیل" type="text" name="Email">
+                            </div>
+                            <div style="border-radius:8px;" class=" col-md-12">
+                                <input style="font-family:Vazir" class="form-control shadow-lg" placeholder="تلفن" type="text" name="Phone">
+                            </div>
+                            <div style="border-radius:8px;" class="col-md-12">
+                                <textarea style="border-radius:8px;font-family:Vazir" class="textarea shadow-lg" placeholder="متن پیام"></textarea>
+                            </div>
+                            <div style="border-radius:8px;" class=" col-md-12">
+                                <button style="font-family:Vazir" class="send shadow-lg">ارسال</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end contact -->
+    <!-- footer -->
+    <footer style="font-family:Vazir">
+        <div id="contact" style="font-family:Vazir" class="footer">
+            <div class="container">
+                <div class="row pdn-top-30">
+                    <div class="col-md-12 ">
+                        <div class="footer-box">
+                            <div class="headinga">
+                                <h3>آدرس</h3>
+                                <span>در شکبه های اجتماعی زیر با ما در تماس باشید</span>
+                                <p>
+                                    0933 705 5457
+                                    <br>bonibo@gmail.com
+                                </p>
+                            </div>
+                            <ul class="location_icon">
+                                <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+
+                            </ul>
+                            <div class="menu-bottom">
+                                <ul class="link">
+                                    <li> <a href="#">خانه</a></li>
+                                    <li> <a href="#">دریاره</a></li>
+
+
+                                    <li> <a href="#">در یک نگاه</a></li>
+                                    <li> <a href="#">تماس با ما</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <p style="font-family:Vazir">© تمامی حقوق مادی و معنوی سایت متعلق به بونیبو میباشد</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- Javascript files-->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery-3.0.0.min.js"></script>
+    <script src="/js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- javascript -->
+    <script src="/js/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
+
+            $(".zoom").hover(function () {
+
+                $(this).addClass('transition');
+            }, function () {
+
+                $(this).removeClass('transition');
+            });
+        });
+    </script>
+</body>
+
+</html>

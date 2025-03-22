@@ -1,0 +1,27 @@
+﻿@model DetailsViewModel
+
+@{
+    Layout = null;
+}
+
+<head>
+    <link rel="icon" href="/images/LogoBar.jpg"
+          type="image/x-icon">
+</head>
+
+<center>
+    <div dir="rtl" style="font-family:Vazir" class="col-md-12">
+        <div class="text-center shadow-lg" style="padding:35px;border-radius:5px">
+            <img src="/images/@(Model.Items.Id).jpg" class="img-fluid" alt="مشکل در بارگیری تصویر"
+                 style="border-radius:5px;
+             width:350px;height:400px">
+            <br />
+            <br />
+            <div style="padding:35px; border-radius:5px;background-color:silver" class="shadow-lg">
+                <h4> آیتم : @Model.Items.ItemName</h4>
+                <p> توضیح : @Model.Items.Description</p>
+                <h6 dir="ltr"> @Model.Items.CreateDate : تاریخ نشر </h6>
+            </div>
+        </div>
+    </div>
+</center>

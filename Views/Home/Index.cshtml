@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Items>
+@foreach (var item in Model)
+{
+    <partial name="_ItemBox" model="@item" />
+}
+<div class="col-md-12">
+    <a asp-action="GetAllItems" asp-controller="Home"
+       style="cursor:pointer; font-family:Vazir" class="read-more shadow-lg">نمایش بیشتر</a>
+</div>
