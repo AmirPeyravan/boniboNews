@@ -1,0 +1,59 @@
+﻿@page
+@model BoniboNews.Pages.Admin.AddModel
+@{
+}
+
+<style>
+    #titleDiv {
+        background-color: white;
+        padding: 20px;
+        border-radius: 4px;
+    }
+    span{
+        color:red;
+    }
+</style>
+
+<div class="text-center">
+    <center>
+        <div class="col-md-12" id="titleDiv">
+            <h4>افزودن آیتم ها</h4>
+        </div>
+    </center>
+</div>
+<br />
+
+<form method="post" enctype="multipart/form-data">
+    <dl class="dl-horizontal">
+        <dd><label asp-for="AddItems.ItemName"></label></dd>
+        <dt>
+            <input asp-for="AddItems.ItemName" class="form-control" />
+            <span asp-validation-for="AddItems.ItemName"></span>
+            <br />
+        </dt>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dd><label asp-for="AddItems.Description"></label></dd>
+        <dt>
+            <textarea asp-for="AddItems.Description" class="form-control"></textarea>
+            <span asp-validation-for="AddItems.Description"></span>
+            <br />
+        </dt>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dd><label asp-for="AddItems.Picture"></label></dd>
+        <dt>
+            <input asp-for="AddItems.Picture" class="form-control" />
+            <span asp-validation-for="AddItems.Picture"></span>
+            <br />
+        </dt>
+    </dl>
+
+        <dl class="dl-horizontal">
+        <dt>
+            <input type="submit" class="btn btn-success col-md-12" value="ثبت" />
+        </dt>
+    </dl>
+</form>

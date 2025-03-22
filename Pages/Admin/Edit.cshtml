@@ -1,0 +1,60 @@
+﻿@page
+@model BoniboNews.Pages.Admin.EditModel
+@{
+}
+
+<style>
+    #titleDiv {
+        background-color: white;
+        padding: 20px;
+        border-radius: 4px;
+    }
+    span{
+        color:red;
+    }
+</style>
+
+<div class="text-center">
+    <center>
+        <div class="col-md-12" id="titleDiv">
+            <h4>ویرایش آیتم ها</h4>
+        </div>
+    </center>
+</div>
+<br />
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="EditItems.Id" />
+    <dl class="dl-horizontal">
+        <dd><label asp-for="EditItems.ItemName"></label></dd>
+        <dt>
+            <input asp-for="EditItems.ItemName" class="form-control" />
+            <span asp-validation-for="EditItems.ItemName"></span>
+            <br />
+        </dt>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dd><label asp-for="EditItems.Description"></label></dd>
+        <dt>
+            <textarea asp-for="EditItems.Description" class="form-control"></textarea>
+            <span asp-validation-for="EditItems.Description"></span>
+            <br />
+        </dt>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dd><label asp-for="EditItems.Picture"></label></dd>
+        <dt>
+            <input asp-for="EditItems.Picture" class="form-control" />
+            <span asp-validation-for="EditItems.Picture"></span>
+            <br />
+        </dt>
+    </dl>
+
+        <dl class="dl-horizontal">
+        <dt>
+            <input type="submit" class="btn btn-success col-md-12" value="ثبت" />
+        </dt>
+    </dl>
+</form>

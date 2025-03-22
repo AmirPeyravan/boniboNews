@@ -1,0 +1,85 @@
+﻿@page
+@model BoniboNews.Pages.Admin.IndexModel
+@{
+}
+
+<style>
+    #titleDiv {
+        background-color: white;
+        padding: 20px;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="text-center">
+    <center>
+        <div class="col-md-11" id="titleDiv">
+            <h4>لیست آیتم ها</h4>
+        </div>
+    </center>
+</div>
+<br />
+
+@*<table>
+    <thead>
+    <tr>
+    <th>تصویر</th>
+    <th>نام</th>
+    <th>قیمت</th>
+    <th>عملیات</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+    foreach (var item in Model.Products)
+    {
+    <tr>
+    <td>
+    <img src="/Images/@item.Id" />
+    </td>
+    <td>@item.Name</td>
+    <td>@item.Item.Price</td>
+    <td>
+    <a href="#">ویرایش</a>
+    <a href="#">حذف</a>
+    </td>
+    </tr>
+    }
+    }
+    </tbody>
+    </table>*@
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>تصویر</th>
+                <th>نام</th>
+                <th>قیمت</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>
+                        <img src="/Images/@(item.Id).jpg" style="max-width:200px;
+                        border:1px solid silver;padding:3px;
+                        border-radius:10px;max-height:200px" />
+                    </td>
+                    <td>@item.ItemName</td>
+                    <td>
+                        <a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+                            حذف
+                        </a>
+
+                        <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
+                            ویرایش
+                        </a>
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+</div>

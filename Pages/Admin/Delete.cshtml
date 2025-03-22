@@ -1,0 +1,60 @@
+﻿@page
+@model BoniboNews.Pages.Admin.DeleteModel
+@{
+}
+
+<style>
+    #titleDiv {
+        background-color: white;
+        padding: 20px;
+        border-radius: 4px;
+    }
+    span{
+        color:red;
+    }
+</style>
+
+<div class="text-center">
+    <center>
+        <div class="col-md-12" id="titleDiv">
+            <h4>حذف آیتم ها</h4>
+        </div>
+    </center>
+</div>
+<br />
+
+<form method="post">
+    <dl class="dl-horizontal">
+        <dd><label asp-for="DeleteItems.ItemName"></label></dd>
+        <dt>
+            <input asp-for="DeleteItems.ItemName" class="form-control" readonly/>
+            <span asp-validation-for="DeleteItems.ItemName"></span>
+            <br />
+        </dt>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dd><label asp-for="DeleteItems.Description"></label></dd>
+        <dt>
+            <textarea asp-for="DeleteItems.Description" class="form-control" readonly></textarea>
+            <span asp-validation-for="DeleteItems.Description"></span>
+            <br />
+        </dt>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dd><label>تصویر</label></dd>
+        <dt>
+            <img src="/Images/@(Model.DeleteItems.Id).jpg" style="max-width:200px;
+            max-height:200px" />
+            <br />
+        </dt>
+    </dl>
+
+        <dl class="dl-horizontal">
+        <dt>
+            <input type="hidden" asp-for="DeleteItems.Id" readonly />
+            <input type="submit" class="btn btn-danger col-md-12" value="حذف" />
+        </dt>
+    </dl>
+</form>
